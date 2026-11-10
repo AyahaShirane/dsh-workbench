@@ -1,0 +1,22 @@
+# Local runtime and credentials
+.env
+.env.*
+*.pem
+*.key
+*.jks
+*.keystore
+credentials*
+secrets/
+.dsh-home/
+.workbench/
+.acceptance/
+.ct/
+evidence/
+config/ingress.json
+node_modules/
+dist/
+build/
+*.apk
+*.idsig
+*.class
+*.log

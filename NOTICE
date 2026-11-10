@@ -1,0 +1,9 @@
+DSH Workbench
+
+This extension integrates DeepSeek Harness through its native plugin, Session and Agent Teams APIs. DeepSeek Harness is an MIT-licensed dependency; its copyright and license are distributed with the installed @deepseek-ai/dsh package.
+https://github.com/deepseek-ai/deepseek-harness
+
+The task/source/outbox design is informed by the MIT-licensed dsh-superagent research prototype. This extension does not distribute a modified DSH core and does not require its GitHub or Feishu integrations.
+https://github.com/deepseek-ai/dsh-superagent-prototype
+
+No Hermes IM adapter code is included in this dashboard release.

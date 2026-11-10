@@ -1,0 +1,74 @@
+{
+  "name": "dsh-workbench",
+  "version": "0.3.1",
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-isolation=none test/*.test.js",
+    "start": "./scripts/start.sh",
+    "test:host": "node --test test/host.e2e.js",
+    "check": "node --check src/plugin.js && node --check src/native.js && node --check src/native-workspace.js && node --check src/store.js && node --check src/adapter.js && node --check src/ui.js && node --check src/dashboard.js && node --check src/dashboard-client.js && node --check src/coordinator.js && node --check src/contracts.js && node --check src/client.js",
+    "build:client": "node scripts/build-client.mjs",
+    "test:superagent:host": "node --test --test-isolation=none test/superagent-host.e2e.js",
+    "test:all": "node --test --test-isolation=none test/*.test.js test/host.e2e.js test/superagent-host.e2e.js"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-agent": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-agent-preset": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-agent-team": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-agent-team-profile": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-tool-agent-team": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-host-webserver": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-locale": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-persona": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-bash": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-fs": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tool-fs-search": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "@deepseek-ai/schemastery": "~3.19.0",
+    "zod": "4.6.7"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/plugin.js",
+    "./client": "./src/client.js"
+  },
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": "0.2.2-rc.1"
+  },
+  "files": [
+    "src/",
+    "scripts/start.sh",
+    "scripts/prepare-profile.mjs",
+    "scripts/build-client.mjs",
+    "config/projects.json",
+    "config/ingress.example.json",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh-CN.md",
+    "release-notes.md",
+    "NOTICE",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "license": "MIT",
+  "author": "AyahaShirane"
+}

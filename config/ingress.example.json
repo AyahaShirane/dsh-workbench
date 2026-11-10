@@ -1,0 +1,7 @@
+{
+  "adapter": "signed-webhook",
+  "account": "local-example",
+  "allowedActors": [],
+  "allowedRooms": [],
+  "selfActor": "bot-account-id"
+}
